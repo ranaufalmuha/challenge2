@@ -6,8 +6,7 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const name = event.target.elements.name.value;
-    icrc1_ledger_canister_backend.greet(name).then((greeting) => {
+    icrc1_ledger_canister_backend.get_usd_btc_exchange().then((greeting) => {
       setGreeting(greeting);
     });
     return false;
@@ -19,11 +18,10 @@ function App() {
       <br />
       <br />
       <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
+        <label htmlFor="name">Check BTC - USD: &nbsp;</label>
         <button type="submit">Click Me!</button>
       </form>
-      <section id="greeting">{greeting}</section>
+      <p id="greeting">{greeting}</p>
     </main>
   );
 }
