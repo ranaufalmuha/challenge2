@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "icrc1_ledger_canister_backend": {
+      "main": "src/icrc1_ledger_canister_backend/main.mo",
+      "type": "motoko"
+    },
+    "icrc1_ledger_canister_frontend": {
+      "dependencies": [
+        "icrc1_ledger_canister_backend"
+      ],
+      "source": [
+        "src/icrc1_ledger_canister_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "icrc1_ledger_canister_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
